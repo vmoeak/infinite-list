@@ -29,6 +29,7 @@ export default {
     name: 'InfiniteList',
     model: {
         prop: 'onLoading',
+        event: 'change'
     },
     props: {
         onLoading: {
@@ -83,6 +84,7 @@ export default {
     mounted() {
         this.scrollList = this.$refs.infiniteScrollList;
         this.getData = this.throttle(() => {
+            this.$emit('change', true);
             this.$emit('load');
         }, 1000);
         this.getData();

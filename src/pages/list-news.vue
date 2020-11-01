@@ -29,7 +29,6 @@ export default {
     },
     methods: {
         onLoad() {
-            this.loading = true;
             setTimeout(() => {
                 for (let i = 0; i < 10; i++) {
                     this.list.push({title: '【标题】', content: '内容内容内容内容内容内容内容内容内容内容'});
@@ -46,6 +45,7 @@ export default {
 
 <style scoped>
 .header {
+    z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;
